@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.4" type="plugin" group="content" method="upgrade">
+	<name>PLG_CONTENT_SS</name>
+	<author>SuperSaaS</author>
+	<creationDate>May 2015</creationDate>
+	<copyright>Copyright (C) 2015 SuperSaaS. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@supersaas.com</authorEmail>
+	<authorUrl>www.supersaas.com</authorUrl>
+	<version>1.0.0</version>
+	<description>PLG_CONTENT_SS_DESCRIPTION</description>
+	<files>
+		<filename plugin="supersaas">supersaas.php</filename>
+	</files>
+	<languages folder="language">
+		<language tag="cs-CZ">cs-CZ.plg_content_supersaas.ini</language>
+		<language tag="cs-CZ">cs-CZ.plg_content_supersaas.sys.ini</language>
+		<language tag="da-DK">da-DK.plg_content_supersaas.ini</language>
+		<language tag="da-DK">da-DK.plg_content_supersaas.sys.ini</language>
+		<language tag="de-DE">de-DE.plg_content_supersaas.ini</language>
+		<language tag="de-DE">de-DE.plg_content_supersaas.sys.ini</language>
+		<language tag="es-ES">es-ES.plg_content_supersaas.ini</language>
+		<language tag="es-ES">es-ES.plg_content_supersaas.sys.ini</language>
+		<language tag="en-GB">en-GB.plg_content_supersaas.ini</language>
+		<language tag="en-GB">en-GB.plg_content_supersaas.sys.ini</language>
+		<language tag="fr-FR">fr-FR.plg_content_supersaas.ini</language>
+		<language tag="fr-FR">fr-FR.plg_content_supersaas.sys.ini</language>
+		<language tag="it-IT">it-IT.plg_content_supersaas.ini</language>
+		<language tag="it-IT">it-IT.plg_content_supersaas.sys.ini</language>
+		<language tag="ja-JP">ja-JP.plg_content_supersaas.ini</language>
+		<language tag="ja-JP">ja-JP.plg_content_supersaas.sys.ini</language>
+		<language tag="nl-NL">nl-NL.plg_content_supersaas.ini</language>
+		<language tag="nl-NL">nl-NL.plg_content_supersaas.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="settings" label="SuperSaaS Plugin Settings">
+				<field
+					name="account_name"
+					type="text"
+					label="PLG_CONTENT_SS_ACCOUNT_NAME"
+					description="PLG_CONTENT_SS_ACCOUNT_NAME_DESCRIPTION"
+					required="true"
+				/>
+				<field
+					name="password"
+					type="password"
+					label="PLG_CONTENT_SS_PASSWORD"
+					description="PLG_CONTENT_SS_PASSWORD_DESCRIPTION"
+					required="true"
+				/>
+				<field
+					name="custom_domain"
+					type="text"
+					label="PLG_CONTENT_SS_CUSTOM_DOMAIN"
+					description="PLG_CONTENT_SS_CUSTOM_DOMAIN_DESCRIPTION"
+				/>
+				<field
+					name="schedule"
+					type="text"
+					label="PLG_CONTENT_SS_SCHEDULE"
+					description="PLG_CONTENT_SS_SCHEDULE"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>
