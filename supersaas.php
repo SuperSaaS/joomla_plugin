@@ -47,7 +47,7 @@ class PlgContentSupersaas extends JPlugin
 	 * @var boolean
 	 * @since 3.4
 	 */
-	private static $shortcode_options = array('schedule', 'button_label', 'button_image_src');
+	private static $shortcode_options = array('after', 'label', 'image');
 
 	/**
 	 * Plugin that adds SuperSaaS content to the content of an article.
@@ -93,14 +93,14 @@ class PlgContentSupersaas extends JPlugin
 		$settings = array_merge($this->_getPluginParams(), $this->_getShortcodeAttrs($matches[1]));
 
 		// Don't render the button if the required things aren't set.
-		if (!isset($settings['account_name']) || !isset($settings['password']) || !isset($settings['schedule']))
+		if (!isset($settings['account_name']) || !isset($settings['password']) || !isset($settings['after']))
 		{
 			return JText::_('PLG_CONTENT_SS_SETUP_INCOMPLETE');
 		}
 
-		if (!isset($settings['button_label']))
+		if (!isset($settings['label']))
 		{
-			$settings['button_label'] = JText::_('PLG_CONTENT_SS_BOOK_NOW');
+			$settings['label'] = JText::_('PLG_CONTENT_SS_BOOK_NOW');
 		}
 
 		if (!isset($settings['custom_domain'] ))
@@ -129,16 +129,16 @@ class PlgContentSupersaas extends JPlugin
 		"<div style=\"display:none\">{emailcloak=off}</div>" .
 		"<input type=\"hidden\" name=\"user[email]\" value=\"" . $user->email . "\"/> " .
 		"<input type=\"hidden\" name=\"checksum\" value=\"{$checksum}\"/>" .
-		"<input type=\"hidden\" name=\"after\" value=\"" . htmlspecialchars($settings['schedule']) . "\"/>";
+		"<input type=\"hidden\" name=\"after\" value=\"" . htmlspecialchars($settings['after']) . "\"/>";
 
-		if (isset($settings['button_image_src']))
+		if (isset($settings['image']))
 		{
-			$content .= "<input type=\"image\" src=\"{$settings['button_image_src']}\" alt=\"" .
-			htmlspecialchars($settings['button_label']) . "\" name=\"submit\" onclick=\"return confirmBooking()\"/>";
+			$content .= "<input type=\"image\" src=\"{$settings['image']}\" alt=\"" .
+			htmlspecialchars($settings['label']) . "\" name=\"submit\" onclick=\"return confirmBooking()\"/>";
 		}
 		else
 		{
-			$content .= "<input type=\"submit\" value=\"" . htmlspecialchars($settings['button_label']) .
+			$content .= "<input type=\"submit\" value=\"" . htmlspecialchars($settings['label']) .
 			"\" onclick=\"return confirmBooking()\"/>";
 		}
 
@@ -217,7 +217,7 @@ class PlgContentSupersaas extends JPlugin
 			'account_name' => $this->params->get('account_name'),
 			'password' => $this->params->get('password'),
 			'custom_domain' => $this->params->get('custom_domain', JText::_('PLG_CONTENT_SS_DOMAIN')),
-			'schedule' => $this->params->get('schedule'),
+			'after' => $this->params->get('schedule'),
 		);
 	}
 }
