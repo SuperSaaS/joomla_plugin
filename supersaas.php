@@ -103,7 +103,7 @@ class PlgContentSupersaas extends JPlugin
 			$settings['label'] = JText::_('PLG_CONTENT_SS_BOOK_NOW');
 		}
 
-		if (!isset($settings['custom_domain'] ))
+		if (!isset($settings['custom_domain']))
 		{
 			$api_endpoint = "http://" . JText::_('PLG_CONTENT_SS_CUSTOM_DOMAIN') . "/api/users";
 		}
@@ -216,8 +216,37 @@ class PlgContentSupersaas extends JPlugin
 		return array(
 			'account_name' => $this->params->get('account_name'),
 			'password' => $this->params->get('password'),
-			'custom_domain' => $this->params->get('custom_domain', JText::_('PLG_CONTENT_SS_DOMAIN')),
+			'custom_domain' => $this->_cleanCustomDomain(),
 			'after' => $this->params->get('schedule'),
 		);
+	}
+
+	/**
+	 * Tries to get the domain name from the custom_domain settings param.
+	 *
+	 * @return  string  The cleaned custom_domain.
+	 *
+	 * @since   3.4
+	 */
+	private function _cleanCustomDomain()
+	{
+		$custom_domain = $this->params->get('custom_domain', JText::_('PLG_CONTENT_SS_DOMAIN'));
+		$url_parts = parse_url($custom_domain);
+
+		if (isset($url_parts['host']))
+		{
+			$domain = $url_parts['host'];
+
+			if (isset($url_parts['port']))
+			{
+				$domain .= ':' . $url_parts['port'];
+			}
+
+			return $domain;
+		}
+		else
+		{
+			return $custom_domain;
+		}
 	}
 }
