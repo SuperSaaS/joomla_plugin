@@ -103,17 +103,19 @@ class PlgContentSupersaas extends JPlugin
 			$settings['label'] = JText::_('PLG_CONTENT_SS_BOOK_NOW');
 		}
 
+    $protocol = JUri::getInstance()->getScheme() . '://';
+
 		if (!isset($settings['custom_domain']))
 		{
-			$api_endpoint = "http://" . JText::_('PLG_CONTENT_SS_CUSTOM_DOMAIN') . "/api/users";
+			$api_endpoint = $protocol . JText::_('PLG_CONTENT_SS_CUSTOM_DOMAIN') . "/api/users";
 		}
 		elseif (filter_var($settings['custom_domain'], FILTER_VALIDATE_URL))
 		{
-			$api_endpoint = $settings['custom_domain'];
+			$api_endpoint = $settings['custom_domain'] . '/api/users';
 		}
 		else
 		{
-			$api_endpoint = "http://" . rtrim($settings['custom_domain'], '/') . "/api/users";
+			$api_endpoint = $protocol . rtrim($settings['custom_domain'], '/') . "/api/users";
 		}
 
 		$settings['custom_domain'] = rtrim($settings['custom_domain'], '/');
@@ -242,7 +244,7 @@ class PlgContentSupersaas extends JPlugin
 				$domain .= ':' . $url_parts['port'];
 			}
 
-			return $domain;
+			return $url_parts['scheme'] . '://' . $domain;
 		}
 		else
 		{
