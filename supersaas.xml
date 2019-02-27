@@ -44,9 +44,9 @@
 				/>
 				<field
 					name="password"
-					type="password"
-					label="PLG_CONTENT_SS_PASSWORD"
-					description="PLG_CONTENT_SS_PASSWORD_DESCRIPTION"
+					type="text"
+					label="PLG_CONTENT_SS_API_KEY"
+					description="PLG_CONTENT_SS_API_KEY_DESCRIPTION"
 					required="true"
 				/>
 				<field
