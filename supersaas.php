@@ -6,7 +6,7 @@
  * @copyright   Copyright (C) 2015 SuperSaaS, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  * @link        https://github.com/SuperSaaS/joomla_plugin
- * @link        http://www.supersaas.com/info/doc/integration/joomla_integration
+ * @link        https://www.supersaas.com/info/doc/integration/joomla_integration
  */
 
 defined('_JEXEC') or die;
@@ -105,7 +105,7 @@ class PlgContentSupersaas extends JPlugin
 
 		if (!isset($settings['custom_domain']))
 		{
-			$api_endpoint = "http://" . JText::_('PLG_CONTENT_SS_CUSTOM_DOMAIN') . "/api/users";
+			$api_endpoint = "https://" . JText::_('PLG_CONTENT_SS_CUSTOM_DOMAIN') . "/api/users";
 		}
 		elseif (filter_var($settings['custom_domain'], FILTER_VALIDATE_URL))
 		{
