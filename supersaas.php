@@ -105,7 +105,7 @@ class PlgContentSupersaas extends JPlugin
 
 		if (!isset($settings['custom_domain']))
 		{
-			$api_endpoint = "https://" . JText::_('PLG_CONTENT_SS_CUSTOM_DOMAIN') . "/api/users";
+			$api_endpoint = "https://" . JText::_('PLG_CONTENT_SS_DOMAIN') . "/api/users";
 		}
 		elseif (filter_var($settings['custom_domain'], FILTER_VALIDATE_URL))
 		{
@@ -113,7 +113,7 @@ class PlgContentSupersaas extends JPlugin
 		}
 		else
 		{
-			$api_endpoint = "http://" . rtrim($settings['custom_domain'], '/') . "/api/users";
+			$api_endpoint = "https://" . rtrim($settings['custom_domain'], '/') . "/api/users";
 		}
 
 		$settings['custom_domain'] = rtrim($settings['custom_domain'], '/');
