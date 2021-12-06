@@ -102,6 +102,11 @@ class PlgContentSupersaas extends JPlugin
 		{
 			$settings['label'] = JText::_('PLG_CONTENT_SS_BOOK_NOW');
 		}
+		
+		if (!isset($settings['button_css'])) // extra configuration setting to apply an existing CSS class (visual consistency), optional and defaults to 'supersaas_login' if empty
+		{
+			$settings['button_css'] = "supersaas_login";
+		}
 
 		if (!isset($settings['custom_domain']))
 		{
@@ -134,12 +139,12 @@ class PlgContentSupersaas extends JPlugin
 		if (isset($settings['image']))
 		{
 			$content .= "<input type=\"image\" src=\"{$settings['image']}\" alt=\"" .
-			htmlspecialchars($settings['label']) . "\" name=\"submit\" onclick=\"return confirmBooking()\" class=\"supersaas_login\"/>";
+			htmlspecialchars($settings['label']) . "\" name=\"submit\" onclick=\"return confirmBooking()\" class=\"{$settings['button_css']}\"/>";
 		}
 		else
 		{
 			$content .= "<input type=\"submit\" value=\"" . htmlspecialchars($settings['label']) .
-			"\" onclick=\"return confirmBooking()\" class=\"supersaas_login\"/>";
+			"\" onclick=\"return confirmBooking()\" class=\"{$settings['button_css']}\"/>";
 		}
 
 		$content .= "</form><script type=\"text/javascript\">function confirmBooking() {" .
@@ -218,6 +223,7 @@ class PlgContentSupersaas extends JPlugin
 			'password' => $this->params->get('password'),
 			'custom_domain' => $this->_cleanCustomDomain(),
 			'after' => $this->params->get('schedule'),
+			'button_css' => $this->params->get('button_css'),
 		);
 	}
 
