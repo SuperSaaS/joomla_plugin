@@ -25,6 +25,7 @@ The shortcode takes the following optional arguments.
 * `label` - The button label. This defaults to “Book Now” or its equivalent in the supported languages. If the button has a background image, this will be the *alternate* text value.
 * `image` - The URL of the background image. This has no default value. So, the button will not have a background image, if this isn’t configured.
 
+The rendered button (v2.2 onwards) has a CSS class of "supersaas_login". The button style can be modified by customising this CSS class in your template.
 ### Technical details
 
 The SuperSaaS Joomla! plugin listens to the *onContentPrepare* event triggered by the following built-in Joomla! contents: archive, article, category, featured article, tag and the *JHTMLContent* utility class used for non-article based content.
