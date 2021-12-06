@@ -3,11 +3,11 @@
 	<name>PLG_CONTENT_SS</name>
 	<author>SuperSaaS</author>
 	<creationDate>May 2015</creationDate>
-	<copyright>Copyright (C) 2020 SuperSaaS. All rights reserved.</copyright>
+	<copyright>Copyright (C) 2021 SuperSaaS. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@supersaas.com</authorEmail>
 	<authorUrl>www.supersaas.com</authorUrl>
-	<version>2.1</version>
+	<version>2.2</version>
 	<description>PLG_CONTENT_SS_DESCRIPTION</description>
 	<files>
 		<filename plugin="supersaas">supersaas.php</filename>
