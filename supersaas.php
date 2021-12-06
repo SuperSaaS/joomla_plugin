@@ -134,12 +134,12 @@ class PlgContentSupersaas extends JPlugin
 		if (isset($settings['image']))
 		{
 			$content .= "<input type=\"image\" src=\"{$settings['image']}\" alt=\"" .
-			htmlspecialchars($settings['label']) . "\" name=\"submit\" onclick=\"return confirmBooking()\"/>";
+			htmlspecialchars($settings['label']) . "\" name=\"submit\" onclick=\"return confirmBooking()\" class=\"supersaas_login\"/>";
 		}
 		else
 		{
 			$content .= "<input type=\"submit\" value=\"" . htmlspecialchars($settings['label']) .
-			"\" onclick=\"return confirmBooking()\"/>";
+			"\" onclick=\"return confirmBooking()\" class=\"supersaas_login\"/>";
 		}
 
 		$content .= "</form><script type=\"text/javascript\">function confirmBooking() {" .
