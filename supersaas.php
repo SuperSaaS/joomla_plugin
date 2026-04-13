@@ -3,8 +3,8 @@
  * @package     SuperSaaS.Plugin
  * @subpackage  Content.supersaas
  *
- * @copyright   Copyright (C) 2015 SuperSaaS, Inc. All rights reserved.
- * @license     GNU General Public License version 2 or later; see LICENSE.txt
+ * @copyright   Copyright (C) 2026 SuperSaaS, Inc. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE.txt
  */
 
 // This file is intentionally left empty.

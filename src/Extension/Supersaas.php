@@ -1,4 +1,11 @@
 <?php
+/**
+ * @package     SuperSaaS.Plugin
+ * @subpackage  Content.supersaas
+ *
+ * @copyright   Copyright (C) 2026 SuperSaaS, Inc. All rights reserved.
+ * @license     GNU General Public License version 3 or later; see LICENSE.txt
+ */
 
 namespace SuperSaaS\Plugin\Content\Supersaas\Extension;
 
